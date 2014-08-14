@@ -26,6 +26,27 @@
           case '22':
             name = '艳梅';
             break;
+          case '51':
+            name = '朋朋(vm)';
+            break;
+          case '52':
+            name = '列恒(vm)';
+            break;
+          case '53':
+            name = '许会(vm)';
+            break;
+          case '54':
+            name = '杨雷(vm)';
+            break;
+          case '55':
+            name = '帅帅(vm)';
+            break;
+          case '56':
+            name = '相琴(vm)';
+            break;
+          case '57':
+            name = '邢柳(vm)';
+            break;
           case '61':
             name = '朋朋';
             break;

@@ -28,7 +28,6 @@
     delete tout[""]; \
     for (ii in idx) { \
       if (20 > ii) continue; \
-      if (49 < ii && 60 > ii) continue; \
       if (!tin[ii]) tin[ii] = 0; \
       if (!tout[ii]) tout[ii] = 0; \
       print ii, tin[ii], tout[ii]; \
