@@ -1,0 +1,2 @@
+*/1 * * * * root /bin/sh /var/www/default/nat/share/cron/log-nat-traffic.sh
+*/1 * * * * www-data /usr/bin/python /var/www/default/nat/share/lib/export.py 3600

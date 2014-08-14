@@ -1,0 +1,8 @@
+/*
+
+!.gitignore
+
+!etc/
+!sbin/
+!share/
+!var/
