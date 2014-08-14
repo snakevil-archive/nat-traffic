@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link href="//cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>Nat Traffic</title>
+  <link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+  <style type="text/css">
+  .navbar-brand {
+    margin: 0;
+  }
+  </style>
 </head>
 <body>
+  <header>
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <h1 class="navbar-brand">
+            <a href="#!/">Nat Traffic</a>
+          </h1>
+        </div>
+      </div>
+    </nav>
+  </header>
   <div class="container">
-    <header>
-      <nav>
-        <ul class="nav nav-pills">
-          <li class="active"><a href="#!/">全部</a>
-          <li><a href="#!/2">内务</a>
-          <li><a href="#!/6">研发</a>
-          <li><a href="#!/7">运营</a>
-          <li><a href="#!/9">决策</a>
-        </ul>
-      </nav>
-    </header>
     <div class="plug-flot" style="height:480px"></div>
   </div>
-  <script src="//cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
-  <script src="//cdn.bootcss.com/flot/0.8.2/jquery.flot.min.js"></script>
-  <script src="//cdn.bootcss.com/flot/0.8.2/jquery.flot.time.min.js"></script>
+  <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+  <script src="http://cdn.bootcss.com/flot/0.8.2/jquery.flot.min.js"></script>
+  <script src="http://cdn.bootcss.com/flot/0.8.2/jquery.flot.time.min.js"></script>
   <script src="s/nat-traffic.min.js"></script>
 </body>
 </html>

@@ -1,4 +1,8 @@
 (function ($, config, dots, flot, job) {
+  $('.plug-flot').on('plotclick', function (event, pos, item) {
+    if (!item) return;
+    location.hash = '#!/' + item.series.label[0] + '/' + item.series.label;
+  });
   config = {
     series: {
       lines: {
@@ -9,6 +13,7 @@
       }
     },
     grid: {
+      clickable: true,
       hoverable: true
     },
     legend: {
