@@ -4,13 +4,15 @@ import sys
 import os
 import time
 import sqlite3
-import calendar
 import json
 
 os.chdir(os.path.dirname(sys.argv[0]) + '/../..');
 
+ts0 = 0
+if 1 < len(sys.argv):
+    ts0 = int (time.time()) - 60 * int (sys.argv[1])
+
 ret = {}
-ts0 = int (time.time() - 3600)
 
 dbconn = sqlite3.connect('var/db/nat.sqlite')
 dbcur = dbconn.cursor()
@@ -24,7 +26,7 @@ for dbrow in dbcur:
     }
 dbconn.close()
 
-fh = open('var/static/hour.json', 'w')
+fh = open('var/static/traffic.json', 'w')
 fh.write(json.dumps(ret))
 fh.close()
 
