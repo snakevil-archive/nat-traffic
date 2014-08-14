@@ -21,79 +21,58 @@
       labelFormatter: function (label, name) {
         switch (label) {
           case '21':
-            name = '怡君';
+            name = '\u6021\u541b';
             break;
           case '22':
-            name = '艳梅';
-            break;
-          case '51':
-            name = '朋朋(vm)';
-            break;
-          case '52':
-            name = '列恒(vm)';
-            break;
-          case '53':
-            name = '许会(vm)';
-            break;
-          case '54':
-            name = '杨雷(vm)';
-            break;
-          case '55':
-            name = '帅帅(vm)';
-            break;
-          case '56':
-            name = '相琴(vm)';
-            break;
-          case '57':
-            name = '邢柳(vm)';
+            name = '\u8273\u6885';
             break;
           case '61':
-            name = '朋朋';
+            name = '\u670b\u670b';
             break;
           case '62':
-            name = '列恒';
+            name = '\u5217\u6052';
             break;
           case '63':
-            name = '许会';
+            name = '\u8bb8\u4f1a';
             break;
           case '64':
-            name = '杨雷';
+            name = '\u6768\u96f7';
             break;
           case '65':
-            name = '帅帅';
+            name = '\u5e05\u5e05';
             break;
           case '66':
-            name = '相琴';
+            name = '\u76f8\u7434';
             break;
           case '67':
-            name = '邢柳';
+            name = '\u90a2\u67f3';
             break;
           case '71':
-            name = '邱晨';
+            name = '\u90b1\u6668';
             break;
           case '72':
-            name = '志强';
+            name = '\u5fd7\u5f3a';
             break;
           case '73':
-            name = '俊鹏';
+            name = '\u4fca\u9e4f';
             break;
           case '74':
-            name = '文君';
+            name = '\u6587\u541b';
             break;
           case '75':
-            name = '明乐';
+            name = '\u660e\u4e50';
             break;
           case '76':
-            name = '董倩';
+            name = '\u8463\u5029';
             break;
           case '91':
-            name = '戴寅';
+            name = '\u6234\u5bc5';
             break;
           case '92':
-            name = '煜宇';
+            name = '\u715c\u5b87';
             break;
           case '93':
-            name = '前进';
+            name = '\u524d\u8fdb';
             break;
           default:
             return label;
@@ -107,7 +86,7 @@
     },
     yaxis: {
       ticks: function (axis, ticks, ret, ii) {
-        ticks = [4, 16, 32, 48, 64, 128, 192, 256, 512];
+        ticks = [4, 16, 32, 48, 64, 128, 192, 256, 512, 768, 1024, 2048, 3072, 4096, 8192, 12288, 16384];
         ret = [];
         for (ii in ticks) {
           ii = ticks[ii];
