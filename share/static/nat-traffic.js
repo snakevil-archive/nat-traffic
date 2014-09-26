@@ -135,22 +135,22 @@
   job = function () {
     var map = function (host) {
       switch (host) {
-        case 87:
-          return 72;
-        case 51:
-          return 61;
-        case 52:
-          return 62;
-        case 53:
-          return 63;
-        case 54:
-          return 64;
-        case 55:
-          return 65;
-        case 56:
-          return 66;
-        case 57:
-          return 67;
+        case '51':
+          return '61';
+        case '52':
+          return '62';
+        case '53':
+          return '63';
+        case '54':
+          return '64';
+        case '55':
+          return '65';
+        case '56':
+          return '66';
+        case '57':
+          return '67';
+        case '87':
+          return '72';
       }
       return host;
     };
@@ -165,6 +165,12 @@
           };
         }
         for (time in data[host]) {
+          if (!swap[label]['in'][time]) {
+            swap[label]['in'][time] = 0;
+          }
+          if (!swap[label]['out'][time]) {
+            swap[label]['out'][time] = 0;
+          }
           swap[label]['in'][time] += data[host][time]['in'] / 60;
           swap[label]['out'][time] += data[host][time]['out'] / 60;
         }
@@ -184,10 +190,10 @@
           data: []
         };
         for (time in swap[label]['in']) {
-          dots['in'][label].data.push([1000 * time, swap[label]['in'][time] / 60]);
+          dots['in'][label].data.push([1000 * time, swap[label]['in'][time]]);
         }
         for (time in swap[label]['out']) {
-          dots['out'][label].data.push([1000 * time, swap[label]['out'][time] / 60]);
+          dots['out'][label].data.push([1000 * time, swap[label]['out'][time]]);
         }
       }
       flot();
