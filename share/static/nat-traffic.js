@@ -63,7 +63,25 @@
             name = '\u660e\u4e50';
             break;
           case '76':
-            name = '\u8463\u5029';
+            name = '\u73b2\u6587';
+            break;
+          case '81':
+            name = '\u6c6a\u6d0b';
+            break;
+          case '82':
+            name = '\u51cc\u5cf0';
+            break;
+          case '83':
+            name = '\u7fa4\u751f';
+            break;
+          case '84':
+            name = '\u6625\u98ce';
+            break;
+          case '85':
+            name = '\u590f\u626c';
+            break;
+          case '86':
+            name = '\u826f\u6d69';
             break;
           case '91':
             name = '\u6234\u5bc5';
@@ -115,21 +133,61 @@
     $.plot('.plug-flot', data, config);
   };
   job = function () {
-    $.getJSON('v/traffic.json', function (data, host, time) {
-      dots['in'] = {};
-      dots.out = {};
+    var map = function (host) {
+      switch (host) {
+        case 87:
+          return 72;
+        case 51:
+          return 61;
+        case 52:
+          return 62;
+        case 53:
+          return 63;
+        case 54:
+          return 64;
+        case 55:
+          return 65;
+        case 56:
+          return 66;
+        case 57:
+          return 67;
+      }
+      return host;
+    };
+    $.getJSON('v/traffic.json', function (data, swap, host, label, time) {
+      swap = {};
       for (host in data) {
-        dots['in'][host] = {
-          label: host,
-          data: []
-        };
-        dots.out[host] = {
-          label: host,
-          data: []
-        };
+        label = map(host);
+        if (!swap[label]) {
+          swap[label] = {
+            'in': {},
+            'out': {}
+          };
+        }
         for (time in data[host]) {
-          dots['in'][host].data.push([1000 * time, data[host][time]['in'] / 60]);
-          dots.out[host].data.push([1000 * time, data[host][time].out / 60]);
+          swap[label]['in'][time] += data[host][time]['in'] / 60;
+          swap[label]['out'][time] += data[host][time]['out'] / 60;
+        }
+      }
+      data = {};
+      dots = {
+        'in': {},
+        'out': {}
+      };
+      for (label in swap) {
+        dots['in'][label] = {
+          label: label,
+          data: []
+        };
+        dots.out[label] = {
+          label: label,
+          data: []
+        };
+        for (time in swap[label]['in']) {
+          dots['in'][label].data.push([1000 * time, swap[label]['in'][time] / 60]);
+        }
+        for (time in swap[label]['out']) {
+          dots['out'][label].data.push([1000 * time, swap[label]['out'][time] / 60]);
         }
       }
       flot();
